@@ -43,11 +43,17 @@ class HangpersonGame
   
   def word_with_guesses
     # turn word to array
-    # scan array for letter, returning an array of
+    # iterate through each letter in word
+    # => if letter matches guesses, push letter to displayed word
+    # => else, push '-' to displayed word
+    # return the displayed word
     # @word.split(//)
-    # @word_with_guesses[@word.index(letter)] = letter #assign letter to correct position of word_with_guesses
   end
   
+  def check_win_or_lose
+  
+  
+  end
   
 
 end
