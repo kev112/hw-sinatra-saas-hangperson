@@ -14,7 +14,7 @@ class HangpersonGame
     @word = word
     @wrong_guesses = ''
     @guesses = ''
-    @word_with_guesses = '-' * word.length 
+    
   end
 
   def self.get_random_word
@@ -48,12 +48,31 @@ class HangpersonGame
     # => else, push '-' to displayed word
     # return the displayed word
     # @word.split(//)
+    displayedWord = ''
+    wordLetters = @word.split(//)
+    wordLetters.each do |letter|
+      if @guesses.include? letter
+        displayedWord << letter
+      else
+        displayedWord << '-'
+      end
+    end
+    return displayedWord
   end
   
   def check_win_or_lose
+    
+    if !word_with_guesses.include? '-'
+      :win
+    elsif @wrong_guesses.length == 7 
+      :lose
+    else
+      :play
+    end
   
-  
+      
+    
   end
   
-
 end
+  
